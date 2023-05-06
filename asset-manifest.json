@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/OlgaKryushycheva/goit-react-hw-02-phonebook/static/css/main.7acaea2f.css",
+    "main.js": "/OlgaKryushycheva/goit-react-hw-02-phonebook/static/js/main.eb6000f2.js",
+    "index.html": "/OlgaKryushycheva/goit-react-hw-02-phonebook/index.html",
+    "main.7acaea2f.css.map": "/OlgaKryushycheva/goit-react-hw-02-phonebook/static/css/main.7acaea2f.css.map",
+    "main.eb6000f2.js.map": "/OlgaKryushycheva/goit-react-hw-02-phonebook/static/js/main.eb6000f2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.eb6000f2.js"
+  ]
+}
