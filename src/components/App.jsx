@@ -1,88 +1,66 @@
 import { Component } from 'react';
-import { FeedbackOptions } from './FedbackOptions';
-import { Notification } from './Notification';
-import { Section } from './Section';
-import { Statistics } from './Statistacs';
 
 export class App extends Component {
   state = {
-    good: 0,
-    neutral: 0,
-    bad: 0,
-  };
-
-  handleClick = evt => {
-    this.setState(prevState => ({
-      [evt.target.name]: prevState.good + 1,
-    }));
-
-    // this.setState(
-    //   prevState =>
-    //     (evt.target.name === 'good' && {
-    //       good: prevState.good + 1,
-    //     }) ||
-    //     (evt.target.name === 'neutral' && {
-    //       neutral: prevState.neutral + 1,
-    //     }) ||
-    //     (evt.target.name === 'bad' && {
-    //       bad: prevState.bad + 1,
-    //     })
-    // );
-
-    // Хотіла зробити через switch і не вдалося((
-    // чи краще взігалі 3 окремі функції?
-    // {
-    //   switch (evt.target.name) {
-    //     case 'good':
-    //       {
-    //         good: prevState.good + 1,
-    //       };
-    //       break;
-    //     case 'neutral':
-    //       {
-    //         neutral: prevState.neutral + 1,
-    //       };
-    //       break;
-    //     case 'bad':
-    //       {
-    //         bad: prevState.bad + 1,
-    //       };
-    //       break;
-    //     default:
-    //       console.log(1);
-    //       break;
-    //   }
-    // }
-  };
-
-  countTotalFeedback = (good, neutral, bad) => {
-    return good + neutral + bad;
-  };
-
-  countPositiveFeedbackPercentage = (good, total) => {
-    return Math.round((good * 100) / total);
+    contacts: [],
+    name: '',
+    number: '',
+    filter: '',
   };
 
   render() {
-    const { good, neutral, bad } = this.state;
-    const total = this.countTotalFeedback(good, neutral, bad);
-    const positivePercentage = this.countPositiveFeedbackPercentage(
-      good,
-      total
-    );
-
     return (
-      <Section title={'Please leave feedback'}>
-        <FeedbackOptions onLeaveFeedback={this.handleClick} />
-        <Statistics
-          good={good}
-          neutral={neutral}
-          bad={bad}
-          total={total}
-          positivePercentage={positivePercentage}
-        />
-        <Notification total={total} massage={'There is no feedback'} />
-      </Section>
+      <section>
+        <h1>Phonebook</h1>
+        <form action="">
+          <label for="">
+            Name
+            <input
+              type="text"
+              name="name"
+              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+              title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
+              required
+            />
+          </label>
+          <label for="">
+            Nomber
+            <input
+              type="tel"
+              name="number"
+              pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
+              title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
+              required
+            />
+          </label>
+          <button type="submit">Add contact</button>
+        </form>
+
+        <h2>Contacts</h2>
+        <label for="">
+          Find contacts by name
+          <input type="text" />
+        </label>
+
+        <ul>
+          <li>
+            cont
+            <button type="button">Delite</button>
+          </li>
+          <li>
+            cont
+            <button type="button">Delite</button>
+          </li>
+          <li>
+            cont
+            <button type="button">Delite</button>
+          </li>
+          <li>
+            cont
+            <button type="button">Delite</button>
+          </li>
+        </ul>
+      </section>
     );
   }
 }
