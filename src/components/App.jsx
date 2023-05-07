@@ -4,12 +4,12 @@ import PropTypes from 'prop-types';
 import { ContactForm } from './ContactForm';
 import { ContactList } from './ContactList';
 import { Filter } from './Filter';
-import defaultContact from './data.json';
+import defaultContacts from './data.json';
 import css from './Css.module.css';
 
 export class App extends Component {
   state = {
-    contacts: defaultContact,
+    contacts: defaultContacts,
     filter: '',
   };
 
