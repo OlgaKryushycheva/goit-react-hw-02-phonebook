@@ -5,6 +5,7 @@ import { ContactForm } from './ContactForm';
 import { ContactList } from './ContactList';
 import { Filter } from './Filter';
 import defaultContact from './data.json';
+import css from './Css.module.css';
 
 export class App extends Component {
   state = {
@@ -58,7 +59,7 @@ export class App extends Component {
     const filtredContacts = this.getFiltredContacts();
 
     return (
-      <div>
+      <div className={css.container}>
         <h1>Phonebook</h1>
         <ContactForm onSubmit={this.addContacts} />
         <h2>Contacts</h2>
